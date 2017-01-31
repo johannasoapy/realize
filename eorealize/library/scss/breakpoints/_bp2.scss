@@ -1,0 +1,373 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+Here's where you can start getting into the good stuff.
+This size will work on iPads, other tablets, and desktops.
+So you can start working with more styles, background images,
+and other resources. You'll also notice the grid starts to
+come into play. Have fun!
+
+******************************************************************/
+
+/*********************
+GENERAL STYLES
+*********************/
+
+body {}
+h1, .h1 {
+	font-size: 1.9em;
+}
+
+h2, .h2, #tribe-events-pg-template .tribe-events-content h2 {
+	font-size: 1.7em;
+}
+
+h3, .h3, #tribe-events-pg-template .tribe-events-content h3 {
+	font-size: 1.4em;
+}
+
+h4, .h4 {
+	font-size: 1.25em;
+}
+h5, .h5 {
+    font-size: 1.1em;
+}
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+.wrap {
+    max-width: 1020px;
+    width: 96%;
+}
+#tribe-events-pg-template {
+    max-width: 1020px;
+    width: 100%;
+}
+
+.stack-group {
+  padding: 1em 2em 1em 0;
+}
+  .t-all {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .t-1of2 {
+     width: 48.25%;
+  }
+
+  .t-1of3 {
+    width: 30.999%;
+  }
+
+  .t-2of3 {
+    width: 65.501%;
+  }
+
+  .t-1of4 {
+    width: 22.375%;
+  }
+
+  .t-3of4 {
+    width: 74.125%;
+  }
+
+  .t-1of5 {
+    width: 20%;
+  }
+
+  .t-2of5 {
+    width: 40%;
+  }
+
+  .t-3of5 {
+    width: 60%;
+  }
+
+  .t-4of5 {
+    width: 80%;
+  }
+.last-col {
+  float: right;
+  margin-right: 0 !important;
+}
+.columns2 {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 3em;
+    -moz-column-gap: 3em;
+    column-gap: 3em;
+    h4, li  {
+        -webkit-column-break-inside: avoid; /* Chrome, Safari */
+        page-break-inside: avoid;           /* Theoretically FF 20+ */
+        break-inside: avoid-column;         /* IE 11 */
+        //display:table;
+    }
+        
+}
+
+/*********************
+HEADER STYLES
+*********************/
+
+.header {
+	background-color: $black;
+    .search-box {
+        form {
+            float: right;
+        }
+    }
+}
+.header {
+    .search-box {
+        form {
+	    max-width: 400px;
+	    clear: both;
+        }
+    }
+    .header-nav-wrap {
+        width: 100%;
+        max-height: none;
+        overflow: visible;
+    }
+    .project-links {
+        width: auto;
+        margin-top: 2em;
+        .sub-menu {
+            top: 21px;
+        }
+    }
+    .menu-toggle {
+	display: none;
+    }
+}
+	#logo {
+        float: left;
+    }
+.user-links.loggedin, .user-links.notloggedin {
+    .search-toggle, .menu-toggle, #login, #logout, .poptrigger {
+        width: auto;
+        margin-left: 18px;
+        font-size: 0.9em;
+        &:after {
+            float: right;
+            box-sizing: border-box;
+            padding: 0 0 0 6px;
+            width: 24px;
+            margin-top: -2px;
+        }
+    }
+}
+
+/************
+NAVIGATION
+************/
+.main-menu {
+    text-align: center;
+    ul.nav-menu {
+        text-align: center;
+        display: inline-block;
+        & > li {
+                display: block;
+                float: left;
+                margin: 0;
+                background: transparent;
+                border-bottom: 0 none;
+                border-left: 1px dotted lighten($theme-light,10%);
+            &:last-child {
+                border-right: 1px dotted lighten($theme-light,10%);
+            }
+            &:hover, &:focus, &:active, &[aria-expanded="true"] {
+                text-shadow: 0 0 4px $theme-color;
+            }
+            & > a {
+                padding: 1em 1.7em;
+                line-height: 1.5;
+            }
+        }
+        .nav-trigger {
+                &:after, &::after {
+                    position: absolute;
+                    top: 2.1em;
+                    right: -moz-calc(50% - 0.3em);
+                    right: -webkit-calc(50% - 0.3em);
+                    right: calc(50% - 0.3em);
+                }
+                &.open {
+                    &:after, &::after {
+                        content:'';
+                    }
+                }
+        }
+    }
+	ul {
+		margin: 0 auto;
+		li {
+			float: left;
+			width: auto;
+            a {
+                padding: 1em 2em;
+            }
+            &:hover, &:focus, &:active, &[aria-expanded="true"] {
+                z-index: 1200;
+                background: $white;
+                .sub-menu.open {
+                    box-shadow: 0 10px 20px $black;
+                    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+                    li {
+                        a {
+                            background: mix($theme-light, $theme-color);
+                            border-top: 1px dotted $theme-extralight;
+                            &:hover, &:focus {
+                                background: $theme-light;
+                            }
+                        }
+                    }
+                }
+            }
+			.sub-menu {
+                text-align: left;
+                position: absolute;
+                top: 100%;
+                width: 120%;
+                min-width: 200px;
+                left: -1px;
+				&.open {
+					max-height: 800px;
+                    overflow: visible;
+                    z-index: 900;
+                    border-left: 1px dotted $theme-light;
+                    &:hover, &:focus {
+                        z-index: 1000;
+                        box-shadow: 0 10px 20px $black;
+                        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+                    }
+				}
+				li {
+					width: 100%;
+                    a {
+                        color: $white;
+                        background: $theme-color;
+                        border-top: 1px dotted $theme-light;
+                    }
+				}
+			}
+		}
+	}
+} // end main-menu
+/*********************
+CONTENT AREA
+*********************/
+.home {
+    .hero {
+        min-height: 400px;
+        margin: 0 auto 1em auto;
+        color: $white;
+        background-position: 80% 50%;
+        background-size: cover;
+        .hero-text {
+            //position: relative;
+            bottom: 0;
+            left: 0;
+            width: 50%;
+            .hide-mobile {
+                display: block;
+            }
+        }
+    }
+    .entry-content blockquote {
+        margin: 1em 0;
+    }
+}
+#content
+{
+    .wrap {
+        padding-bottom: 4em;
+    }
+}
+#content .post-grid {
+	width:48%;
+	margin: 1%;
+	float: left;
+    height: 268px;
+	h4 {
+		height: 2.8em;
+	}
+}
+.hentry {
+    &.article, &.sfwd-courses, &.sfwd-lessons, &.sfwd-topic, &.type-post, &.sfwd-quiz, &.type-attachment, &.page {
+        padding: 0.5em 1em;
+    }
+    header, footer {
+        padding: 1.5em;
+    }
+}
+.entry-content {
+    padding: 1.5em;
+    blockquote {
+        margin: 2em;
+        font-size: 1.3em;
+    }
+}
+/*********************
+SIDEBARS & ASIDES
+*********************/
+
+.sidebar {
+    padding: 0;
+}
+
+	.widget {
+        .menu {
+            .current-menu-item {
+                &:after {
+                    border-bottom: 18px solid transparent;
+                    border-left: 18px solid $mid-gray;
+                    border-top: 18px solid transparent;
+                    top: 15%;
+                    content: "";
+                    height: 0;
+                    position: absolute;
+                    right: -32px;
+                    width: 0;
+                }
+            }
+        }
+		ul {
+			li {
+
+				&:first-child {}
+				&:last-child {}
+				a {}
+				/* deep nesting */
+
+				ul {
+					margin-top: 0.75em;
+					padding-left: 1em;
+				}
+			}
+		}
+	}
+
+.widget + .widget {
+    margin: 1em 0;
+}
+
+.gform_body {
+    margin: 1.5em 0;
+}
+
+
+/*********************
+FOOTER STYLES
+*********************/
+.copyright {
+	margin-top: 3.8em;
+    text-align: right;
+}
+

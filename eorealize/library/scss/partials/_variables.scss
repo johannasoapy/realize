@@ -1,0 +1,59 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Variables
+
+Here is where we declare all our variables like colors, fonts,
+base values, and defaults. We want to make sure this file ONLY
+contains variables that way our files don't get all messy.
+No one likes a mess.
+
+******************************************************************/
+
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+
+$alert-yellow:      #ebe16f;
+$alert-red:         #fbe3e4;
+$alert-green:       #e6efc2;
+$alert-blue:        #d5edf8;
+
+$black:             #363a3e;
+$white:             #fff;
+
+$light-gray:        #f7f9f6;
+$mid-gray:          #f0f0f0;
+$gray:              #ebe6df;
+$text-color:        #282b2e;
+$meta-gray:         #8b8f96;
+
+$tan:               #eceee5;
+$green:             #7dd667;
+
+$bones-pink:        #d87a0f;//#f5820d;
+$blue:              #00617D;
+$green:             #63b52d;
+
+$theme-color:       $blue;
+$theme-light:       #29BDBA;
+$theme-extralight:  lighten($theme-light,10%);
+$link-color:        mix($theme-light, $theme-color);
+$link-hover:        $theme-light;
+
+$dark-pink:         darken($bones-pink,10%);
+$dark-pink-trans:   rgba(210,106,2,0.8);
+$link-color-hf:     $theme-extralight;
+$link-hover-hf:     lighten($theme-extralight,20%);
+
+$border-color:      #ccc;
+$disabled-gray:     #cfcfcf;
+
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/

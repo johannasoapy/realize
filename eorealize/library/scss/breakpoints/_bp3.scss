@@ -1,0 +1,159 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop.
+
+******************************************************************/
+body {
+    font-size: 105%;
+}
+.wrap, #tribe-events-pg-template {
+    width: 92%;
+    max-width: 1280px;
+}
+.standout-block {
+  padding: 1.5em;
+    margin-top: 0;
+}
+/********************************
+GRID
+*********************************/
+.stack-group {
+  padding: 1em 2em 1em 0;
+}
+  .d-all  {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .d-1of2 {
+    width: 48.25%;
+  }
+
+  .d-1of3 {
+    width: 30.999%;
+  }
+
+  .d-2of3 {
+    width: 65.501%;
+  }
+
+  .d-1of4 {
+    width: 22.375%;
+  }
+
+  .d-3of4 {
+    width: 74.125%;
+  }
+
+  .d-1of5 {
+    width: 20%;
+  }
+
+  .d-2of5 {
+    width: 40%;
+  }
+
+  .d-3of5 {
+    width: 60%;
+  }
+
+  .d-4of5 {
+    width: 80%;
+  }
+
+  .d-1of6 {
+    width: 16.6666666667%;
+  }
+
+  .d-1of7 {
+    width: 14.2857142857%;
+  }
+
+  .d-2of7 {
+    width: 28.5714286%;
+  }
+
+  .d-3of7 {
+    width: 42.8571429%;
+  }
+
+  .d-4of7 {
+    width: 57.1428572%;
+  }
+
+  .d-5of7 {
+    width: 71.4285715%;
+  }
+
+  .d-6of7 {
+    width: 85.7142857%;
+  }
+
+  .d-1of8 {
+    width: 12.5%;
+  }
+
+  .d-1of9 {
+    width: 11.1111111111%;
+  }
+
+  .d-1of10 {
+    width: 10%;
+  }
+
+  .d-1of11 {
+    width: 9.09090909091%;
+  }
+
+  .d-1of12 {
+    width: 8.33%;
+  }
+.last-col {
+  float: right;
+  margin-right: 0 !important;
+}
+/************
+NAVIGATION
+************/
+.main-menu {
+    ul.nav-menu {
+        text-align: center;
+        display: inline-block;
+        & > li {
+            & > a {
+                padding: 1em 2.5em;
+            }
+        }
+    }
+
+    ul {
+        li {
+            a {
+                padding: 0.3em 2em;
+            }
+        }
+    }
+}
+
+.search-toggle {
+
+}
+
+/************
+CONTENT
+************/
+#content .post-grid {
+	width:30.3%;
+	margin: 1.5%;
+	height: 288px;
+}
+.home {
+    .hero {
+        font-size: 16px;
+    }
+}

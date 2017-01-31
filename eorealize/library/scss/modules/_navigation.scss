@@ -1,0 +1,281 @@
+.header-nav-wrap {
+    max-height: 0;
+    overflow: hidden;
+    @include transition(all 0.4s ease-in-out);
+    &.open {
+	max-height: 1200px;
+	@include transition(all 0.4s ease-in-out);
+    }
+}
+
+.header-nav-wrap {
+    background: $theme-color;
+    border-top: 8px solid $theme-light;
+}
+.project-links {
+    margin: 0.5em 0;
+    float: right;
+    padding: 6px;
+    width: 100%;
+    a, li, span {
+        color: $link-hover-hf !important;
+        text-decoration: none;
+
+        &:hover, &:focus {
+            color: $white !important;
+        }
+    }
+    .toggle-buttons {
+        float: right;
+    }
+    li {
+        padding: 0.2em 0;
+    }
+    .login {
+        float: left;
+        &:after {
+            content: 'i';
+        }
+    }
+    .logout {
+        float: left;
+        &:after {
+            content: 'o';
+        }
+    }
+    #profile-toggle {
+        position: relative;
+        
+    }
+    .poptrigger {
+        &:after {
+            font-family: 'fontello';
+            content:'d';
+        }
+    }
+    .popup {
+      display:none;
+      position:absolute;
+      z-index:50;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    }
+    .sub-menu {
+        top: 52px;
+        padding: 6px 8px;
+        width: 150px;
+        min-width: 100%;
+        background: $black;
+        text-align: left;
+        z-index: 1000;
+        font-size: 16px;
+        li {
+            a {
+                padding: 4px 0;
+                display: inline-block;
+            }
+
+        }
+    }
+
+}
+.search-toggle {
+    &:after {
+	    content: 's';
+    }
+}
+.menu-toggle {
+    &:after {
+	    content: 'n';
+    }
+}
+.search-toggle, .menu-toggle, #login, #logout, .poptrigger {
+	float: left;
+	background: transparent;
+	vertical-align: bottom;
+	font-size: 0.8em;
+	padding: 0 6px;
+	width: 25%;
+    //height: 40px;
+    display: block;
+	line-height: 18px;
+	text-align: center;
+	font-weight: 400;
+	margin: 0 0 10px 0;
+    cursor: pointer;
+
+	&:after {
+	    font-family: "fontello";
+	    font-size: 21px;
+	    line-height: 24px;
+	    font-weight: 300;
+        
+        display: block;
+		
+	}
+	&:hover, &:focus {
+	    background: transparent;
+		color: $white !important;
+		&:before {
+			color: $link-color-hf !important;
+		}	
+	}
+	&.open {
+	    &:after {
+		content: 'x';
+		font-size: 16px;
+	    }
+	}
+	.screen-reader-text {
+	    position: static;
+	    clip: none;
+	}
+
+}
+.user-links.loggedin {
+    .search-toggle, .menu-toggle, #login, #logout, .poptrigger {
+        width: 25%;
+    }
+}
+.user-links.notloggedin {
+    .search-toggle, .menu-toggle, #login, #logout, .poptrigger {
+        width: 33%;
+    }
+}
+.main-menu {
+    width: 100%;
+    clear: both;
+    ul.nav-menu {
+        margin: 0;
+        .nav-trigger {
+            position: relative;
+            &:after, &::after {
+                    font-family: 'fontello';
+                    position: absolute;
+                    top: 0.5em;
+                    right: 1em;
+                    cursor: pointer;
+                    content:'d';
+                }
+                &.open {
+                    &:after, &::after {
+                        content:'x';
+                        font-size: 0.8em;
+                        top: 0.7em;
+                        right: 1.2em;
+                    }
+                }
+            & > a {
+                pointer-events: none;
+            }
+        }
+        & > li {
+            margin: 0.2em 0;
+            background: $theme-color;
+            border-bottom: 1px dotted lighten($theme-light,10%);
+            color: $tan;
+            &:hover, &:focus, &:active, &[aria-expanded="true"] {
+                background: mix($theme-light, $theme-color);
+                
+            }
+            a{
+                display: block;
+                
+            }
+            & > a {
+                font-size: 1em;
+                color: $tan;
+                line-height: 2em;
+            }
+        }
+    }
+	ul {
+		margin: 0 auto;
+		li {
+			cursor:pointer;
+			display: block;
+			width: 100%;
+			position: relative;
+            background: $gray;
+            &:hover, &:focus, &:active, &[aria-expanded="true"] {
+                background: $white;
+                .sub-menu.open {
+                    li {
+                        a {
+                            background: $white;
+                            &:hover, &:focus {
+                                background: $tan;
+                            }
+                        }
+                    }
+                }
+            }
+			a {
+                background: transparent;
+				color: $text-color;
+                min-height: 44px;
+				width: 100%;
+				display: block;
+				word-break: normal;
+                padding: 0.3em 0.85em;
+                text-decoration: none;
+                font-size: 0.9em;
+			}
+            
+			
+			.sub-menu {
+				-webkit-transition: all 0.4s;
+				-moz-transition: all 0.4s;
+				-ms-transition: all 0.4s;
+				-o-transition: all 0.4s;
+				transition: all 0.4s;
+				overflow: hidden;
+				max-height: 0;
+				&.open {
+                    border-bottom: 1px solid 1px dotted $theme-light;
+					max-height: 600px;
+                    overflow: visible;
+                    
+				}
+				li {
+					background: transparent;
+					margin: 0;
+					float: none;
+					.expand {
+                        a {
+                            pointer-events: auto;
+                            width: 100%;
+                        }
+                    }
+					a {
+						border-top: 1px dotted $theme-light;
+						float: none;
+						padding: 1em;
+						width: 100%;
+                        line-height: 1.2;
+                        background: $gray;
+					}
+				}
+			}
+		}
+	}
+}
+
+.footer-navigation {
+	.nav-menu {
+		font-variant: small-caps;
+		font-size: 1.2em;
+		ul.sub-menu {
+			text-transform: none;
+			height: 0;
+			overflow: hidden;
+			margin-top: 0.2em;
+			font-variant: normal;
+			font-size: 0.8em;
+		}
+		a {
+			padding: 0;
+			color: $tan;
+			text-decoration: none;
+		}
+	}
+}
